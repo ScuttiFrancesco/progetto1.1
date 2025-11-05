@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "commons",
+  "info": {
+    "singularName": "common",
+    "pluralName": "commons",
+    "displayName": "Common (Internal - Do Not Use)",
+    "description": "Placeholder content-type for common API routes. This should not be used directly."
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "content-manager": {
+      "visible": false
+    },
+    "content-type-builder": {
+      "visible": false
+    }
+  },
+  "attributes": {
+    "placeholder": {
+      "type": "string",
+      "private": true
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news",
+  "info": {
+    "singularName": "new",
+    "pluralName": "news",
+    "displayName": "New"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": false
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content_da_verificare": {
+      "type": "text"
+    },
+    "author": {
+      "type": "string"
+    },
+    "sourceName": {
+      "type": "string"
+    },
+    "visible": {
+      "type": "boolean"
+    },
+    "description": {
+      "type": "string"
+    },
+    "urlName": {
+      "type": "string"
+    },
+    "dateCreated": {
+      "type": "datetime"
+    },
+    "publicationDate": {
+      "type": "datetime"
+    },
+    "expirationDate": {
+      "type": "datetime"
+    },
+    "version": {
+      "type": "integer"
+    },
+    "status_da_verificare": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "composizioneSottotitolo": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "composizioneTitle": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "category_da_verificare": {
+      "type": "text"
+    }
+  }
+}

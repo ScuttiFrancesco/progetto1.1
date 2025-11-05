@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_testos",
+  "info": {
+    "displayName": "testo"
+  },
+  "options": {},
+  "attributes": {
+    "testo": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

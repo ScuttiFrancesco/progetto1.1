@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_widget_articolos",
+  "info": {
+    "displayName": "articolo"
+  },
+  "options": {},
+  "attributes": {
+    "articoli": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::articoli.articoli"
+    },
+    "numElementiDaMostrare": {
+      "type": "integer",
+      "default": 20
+    }
+  },
+  "config": {}
+}

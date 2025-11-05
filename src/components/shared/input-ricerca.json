@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_widget_input_ricercas",
+  "info": {
+    "displayName": "input-ricerca"
+  },
+  "options": {},
+  "attributes": {
+    "filtro": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

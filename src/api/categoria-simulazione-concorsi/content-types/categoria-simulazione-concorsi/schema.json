@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_simulazione_concorsis",
+  "info": {
+    "singularName": "categoria-simulazione-concorsi",
+    "pluralName": "categoria-simulazione-concorsis",
+    "displayName": "Categoria Simulazione Concorsi"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

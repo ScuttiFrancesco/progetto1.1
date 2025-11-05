@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_medaglieres",
+  "info": {
+    "singularName": "categoria-medagliere",
+    "pluralName": "categoria-medaglieres",
+    "displayName": "Categoria Medagliere"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "medaglies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::medaglie.medaglie",
+      "inversedBy": "categoria_medaglieres"
+    }
+  }
+}

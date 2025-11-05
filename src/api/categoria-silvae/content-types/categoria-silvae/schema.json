@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_silvaes",
+  "info": {
+    "singularName": "categoria-silvae",
+    "pluralName": "categoria-silvaes",
+    "displayName": "Categoria Silvae"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "articolis": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::articoli.articoli",
+      "mappedBy": "categoria_silvaes"
+    }
+  }
+}

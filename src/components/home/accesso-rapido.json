@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_home_accesso_rapidos",
+  "info": {
+    "displayName": "accesso-rapido"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "accesso rapido",
+      "required": true
+    },
+    "immaginiTitolo": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "wrapperBottoni": {
+      "type": "component",
+      "component": "shared.wrapper-bottoni",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_comandante_generales",
+  "info": {
+    "singularName": "categoria-comandante-generale",
+    "pluralName": "categoria-comandante-generales",
+    "displayName": "Categoria Comandante Generale"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_bicentenarios",
+  "info": {
+    "singularName": "categoria-bicentenario",
+    "pluralName": "categoria-bicentenarios",
+    "displayName": "Categoria Bicentenario"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

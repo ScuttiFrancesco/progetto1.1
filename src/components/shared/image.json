@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_images",
+  "info": {
+    "displayName": "image"
+  },
+  "options": {},
+  "attributes": {
+    "immagine": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "url": {
+      "type": "string"
+    },
+    "nuovaPagina": {
+      "type": "boolean",
+      "default": false
+    },
+    "ordine": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}

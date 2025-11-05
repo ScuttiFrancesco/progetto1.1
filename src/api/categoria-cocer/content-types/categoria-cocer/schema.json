@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_cocers",
+  "info": {
+    "singularName": "categoria-cocer",
+    "pluralName": "categoria-cocers",
+    "displayName": "Categoria Cocer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

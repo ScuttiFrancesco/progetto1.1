@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_widget_filtros",
+  "info": {
+    "displayName": "filtro"
+  },
+  "options": {},
+  "attributes": {
+    "testo": {
+      "type": "string"
+    },
+    "filtri": {
+      "type": "component",
+      "component": "shared.input-ricerca",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

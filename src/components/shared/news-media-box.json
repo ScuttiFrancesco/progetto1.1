@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_shared_news_media_boxes",
+  "info": {
+    "displayName": "news-media-box"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "composizioneColonnaSinistra": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "ora",
+        "comune",
+        "contratto",
+        "ruolo",
+        "stato"
+      ]
+    },
+    "composizioneColonnaDestra": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "title",
+        "fonte",
+        "autore",
+        "comune"
+      ]
+    },
+    "numElementiDaMostrare": {
+      "type": "integer",
+      "default": 2,
+      "min": 2,
+      "max": 3
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

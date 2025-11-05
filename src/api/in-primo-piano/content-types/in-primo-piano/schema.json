@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "in_primo_pianos",
+  "info": {
+    "singularName": "in-primo-piano",
+    "pluralName": "in-primo-pianos",
+    "displayName": "In Primo Piano"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "redirectUrl": {
+      "type": "string",
+      "required": true
+    },
+    "redirectUrlNewPage": {
+      "type": "boolean"
+    },
+    "senzaTitolo": {
+      "type": "string",
+      "required": true
+    },
+    "ordine": {
+      "type": "integer"
+    },
+    "thumb": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

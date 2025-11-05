@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_layout_colonnas",
+  "info": {
+    "displayName": "colonna"
+  },
+  "options": {},
+  "attributes": {
+    "etichetta": {
+      "type": "string",
+      "required": true
+    },
+    "isCliccabile": {
+      "type": "boolean"
+    },
+    "tipo": {
+      "type": "enumeration",
+      "enum": ["text", "date", "dateTime", "file", "dateFrom", "dateTo"]
+    },
+    "composizioneColonna": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "datainizio",
+        "datafine",
+        "title",
+        "fonte",
+        "autore",
+        "comune",
+        "descrizione",
+        "download"
+      ]
+    },
+    "nomeColonna": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

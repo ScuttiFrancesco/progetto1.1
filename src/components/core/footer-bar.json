@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_core_footer_bars",
+  "info": {
+    "displayName": "footer-bar"
+  },
+  "options": {},
+  "attributes": {
+    "testoLatoDestro": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "component",
+      "component": "shared.image",
+      "repeatable": false
+    },
+    "links": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

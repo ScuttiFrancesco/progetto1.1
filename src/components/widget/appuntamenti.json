@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_widget_appuntamentis",
+  "info": {
+    "displayName": "appuntamenti"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "colonne": {
+      "type": "component",
+      "component": "shared.colonna",
+      "repeatable": true,
+      "required": true,
+      "default": [
+        {
+          "etichetta": "data",
+          "isCliccabile": false,
+          "tipo": "text",
+          "nomeColonna": "data",
+          "composizioneColonna": "[\"dataInizio\", \"dataFine\"]"
+        },
+        {
+            "etichetta": "title",
+            "isCliccabile": true,
+            "tipo": "text",
+            "nomeColonna": "title",
+            "composizioneColonna": "[\"title\"]"
+        },
+        {
+          "etichetta": "comune",
+          "isCliccabile": false,
+          "tipo": "text",
+          "nomeColonna": "luogo",
+          "composizioneColonna": "[\"comune\"]"
+        }
+      ]
+    },
+    "numElementiDaMostrare": {
+      "type": "integer",
+      "default": 5,
+      "min": 5,
+      "max": 20
+    }
+  },
+  "config": {}
+}

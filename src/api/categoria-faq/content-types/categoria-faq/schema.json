@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_faqs",
+  "info": {
+    "singularName": "categoria-faq",
+    "pluralName": "categoria-faqs",
+    "displayName": "Categoria Faq"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

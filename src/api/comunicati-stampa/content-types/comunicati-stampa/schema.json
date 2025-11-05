@@ -1,0 +1,92 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comunicati_stampas",
+  "info": {
+    "singularName": "comunicati-stampa",
+    "pluralName": "comunicati-stampas",
+    "displayName": "Comunicati Stampa"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "fonte": {
+      "type": "string"
+    },
+    "comune": {
+      "type": "string"
+    },
+    "contenuto_da_verificare": {
+      "type": "richtext"
+    },
+    "fontePrefisso_da_verificare": {
+      "type": "enumeration",
+      "enum": ["ciao"]
+    },
+    "redirectNewPage": {
+      "type": "boolean"
+    },
+    "scadenzaAutomatica": {
+      "type": "boolean"
+    },
+    "thumb": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+      "listaLink": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+    "fotoGallery": {
+      "type": "component",
+      "component": "immagine.galleria-immagini",
+      "repeatable": false
+    },
+     "composizioneSottotitolo": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "composizioneTitle": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": false
+    }
+  }
+}

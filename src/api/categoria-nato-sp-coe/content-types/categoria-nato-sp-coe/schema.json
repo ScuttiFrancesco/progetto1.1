@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_nato_sp_coes",
+  "info": {
+    "singularName": "categoria-nato-sp-coe",
+    "pluralName": "categoria-nato-sp-coes",
+    "displayName": "Categoria Nato Sp Coe"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

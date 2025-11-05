@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_widget_infos",
+  "info": {
+    "displayName": "info"
+  },
+  "options": {},
+  "attributes": {
+    "testo": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

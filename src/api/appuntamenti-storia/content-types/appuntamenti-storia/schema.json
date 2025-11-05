@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "appuntamenti_storias",
+  "info": {
+    "singularName": "appuntamenti-storia",
+    "pluralName": "appuntamenti-storias",
+    "displayName": "Appuntamenti Storia"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "data": {
+      "type": "datetime"
+    },
+    "testo": {
+      "type": "text"
+    },
+    "linkUtili": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+     "composizioneSottotitolo": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "composizioneTitle": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": false
+    }
+  }
+}

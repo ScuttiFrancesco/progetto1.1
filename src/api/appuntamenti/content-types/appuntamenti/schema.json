@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "appuntamentis",
+  "info": {
+    "singularName": "appuntamenti",
+    "pluralName": "appuntamentis",
+    "displayName": "Appuntamenti"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "comune": {
+      "type": "string"
+    },
+    "dataInizio": {
+      "type": "datetime"
+    },
+    "contenuto_da_verificare": {
+      "type": "richtext"
+    },
+    "fotoGallery": {
+      "type": "component",
+      "component": "immagine.galleria-immagini",
+      "repeatable": false
+    },
+    "allegati_widget": {
+      "type": "string"
+    },
+    "listaLink": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+    "composizioneSottotitolo": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "composizioneTitle": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "inEvidenza": {
+      "type": "boolean",
+      "default": false
+    },
+    "ignoraDataFine": {
+      "type": "boolean"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": false
+    }
+  }
+}

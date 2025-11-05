@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_expo_milano_2015s",
+  "info": {
+    "singularName": "categoria-expo-milano-2015",
+    "pluralName": "categoria-expo-milano-2015s",
+    "displayName": "Categoria Expo Milano 2015"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gare_appaltos",
+  "info": {
+    "singularName": "gare-appalto",
+    "pluralName": "gare-appaltos",
+    "displayName": "Gare Appalto"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "codiceCig": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "enteAppaltante_da_verificare": {
+      "type": "enumeration",
+      "enum": [
+        "ciao"
+      ]
+    },
+    "fonteLista_da_verificare": {
+      "type": "enumeration",
+      "enum": [
+        "ciao"
+      ]
+    },
+    "fonte": {
+      "type": "string"
+    },
+    "dataScadenza": {
+      "type": "datetime"
+    },
+    "statoPostScadenza_da_verificare": {
+      "type": "enumeration",
+      "enum": [
+        "ciao"
+      ]
+    },
+    "descrizione_da_verificare": {
+      "type": "richtext"
+    },
+    "regioniCompetenza_da_verificare": {
+      "type": "enumeration",
+      "enum": [
+        "ciao"
+      ]
+    },
+    "categoria_gare_appaltos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::categoria-gare-appalto.categoria-gare-appalto",
+      "mappedBy": "gare_appaltos"
+    },
+    "protocollo": {
+      "type": "string"
+    },
+    "codiceUnivoco": {
+      "type": "string"
+    },
+    "idGara": {
+      "type": "string"
+    },
+    "oggettoProcedura_da_verificare": {
+      "type": "enumeration",
+      "enum": [
+        "ciao"
+      ]
+    },
+    "sceltaContraente_da_verificare": {
+      "type": "enumeration",
+      "enum": [
+        "ciao"
+      ]
+    },
+    "anno": {
+      "type": "integer"
+    },
+    "atti": {
+      "type": "date"
+    },
+    "allegati_widget_______": {
+      "type": "string"
+    },
+    "bando": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "assegnazione": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "annullamento": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "listaLink": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+     "composizioneSottotitolo": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "composizioneTitle": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": false
+    }
+  }
+}

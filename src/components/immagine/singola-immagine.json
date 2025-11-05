@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_immagine_singola_immagines",
+  "info": {
+    "displayName": "singola-immagine"
+  },
+  "options": {},
+  "attributes": {
+    "immagine": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

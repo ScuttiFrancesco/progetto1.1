@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_museo_storicos",
+  "info": {
+    "singularName": "categoria-museo-storico",
+    "pluralName": "categoria-museo-storicos",
+    "displayName": "Categoria Museo Storico"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "kind": "collectionType",
+  "collectionName": "eventis",
+  "info": {
+    "singularName": "eventi",
+    "pluralName": "eventis",
+    "displayName": "Eventi"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "titoloNascosto": {
+      "type": "string"
+    },
+    "dataInizio": {
+      "type": "string"
+    },
+    "comune": {
+      "type": "string"
+    },
+    "contenuto": {
+      "type": "richtext"
+    },
+    "InHome_da_verificare": {
+      "type": "boolean"
+    },
+    "redirectUrl": {
+      "type": "string"
+    },
+    "redirectNewPage": {
+      "type": "boolean"
+    },
+    "pulsanteScopri": {
+      "type": "boolean"
+    },
+    "thumb": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "sommario_da_verificare": {
+      "type": "richtext"
+    },
+    "fotoGallery": {
+      "type": "component",
+      "component": "immagine.galleria-immagini",
+      "repeatable": false
+    },
+    "allegati_da_widget": {
+      "type": "string"
+    },
+    "eventi_da_verificare": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::eventi.eventi"
+    },
+     "composizioneSottotitolo": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "composizioneTitle": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": false
+    }
+  }
+}

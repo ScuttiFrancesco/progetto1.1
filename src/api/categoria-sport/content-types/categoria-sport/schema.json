@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_sports",
+  "info": {
+    "singularName": "categoria-sport",
+    "pluralName": "categoria-sports",
+    "displayName": "Categoria Sport"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

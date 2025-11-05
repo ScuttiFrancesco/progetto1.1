@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_twitters",
+  "info": {
+    "singularName": "categoria-twitter",
+    "pluralName": "categoria-twitters",
+    "displayName": "Categoria Twitter"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

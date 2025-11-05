@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_widget_comunicatis",
+  "info": {
+    "displayName": "comunicati"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "colonne": {
+      "type": "component",
+      "component": "shared.colonna",
+      "repeatable": true,
+      "required": true,
+      "default": [
+        {
+          "etichetta": "data",
+          "isCliccabile": false,
+          "tipo": "dateTime",
+          "nomeColonna": "data",
+          "composizioneColonna": "[\"data\"]"
+        },
+        {
+          "etichetta": "title",
+          "isCliccabile": true,
+          "tipo": "text",
+          "nomeColonna": "title",
+          "composizioneColonna": "[\"comune\",\"title\"]"
+        },
+        {
+          "etichetta": "fonte",
+          "isCliccabile": false,
+          "tipo": "text",
+          "nomeColonna": "fonte",
+          "composizioneColonna": "[\"fonte\"]"
+        },
+        {
+          "etichetta": "descrizione",
+          "isCliccabile": false,
+          "tipo": "text",
+          "nomeColonna": "descrizione",
+          "composizioneColonna": "[\"descrizione\"]"
+        }
+      ]
+    },
+    "numElementiDaMostrare": {
+      "type": "integer",
+      "default": 5,
+      "min": 5,
+      "max": 20
+    }
+  },
+  "config": {}
+}

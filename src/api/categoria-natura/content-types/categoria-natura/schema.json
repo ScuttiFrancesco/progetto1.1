@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_naturas",
+  "info": {
+    "singularName": "categoria-natura",
+    "pluralName": "categoria-naturas",
+    "displayName": "Categoria Natura"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

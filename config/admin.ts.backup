@@ -1,0 +1,98 @@
+﻿export default ({ env }) => {
+  const clientUrl = env('CLIENT_URL') || 'http://localhost:4200';
+  const previewSecret = env('PREVIEW_SECRET') || 'la-mia-super-segreta-chiave-di-preview';
+
+  // Funzione per generare il pathname di preview in base al content-type
+  const getPreviewPathname = (uid: string, { locale, document }: any): string | null => {
+    const { slug } = document;
+    
+    // Gestisci i diversi content-types con i loro URL specifici
+    switch (uid) {
+      // Page-configs (pagine generiche)
+      case 'api::page-config.page-config': {
+        if (!slug) return null;
+        return `/preview?slug=${slug}`;
+      }
+      
+      // Comunicati stampa
+      case 'api::comunicati-stampa.comunicati-stampa': {
+        if (!slug) return null;
+        return `/in-vostro-aiuto/informazioni/comunicati-stampa/${slug}`;
+      }
+      
+      // Eventi
+      case 'api::eventi.eventi': {
+        if (!slug) return null;
+        return `/in-vostro-aiuto/informazioni/eventi/${slug}`;
+      }
+      
+      // News
+      case 'api::news.news': {
+        if (!slug) return null;
+        return `/in-vostro-aiuto/informazioni/news/${slug}`;
+      }
+      
+      // Ordine del giorno
+      case 'api::ordine-del-giorno.ordine-del-giorno': {
+        if (!slug) return null;
+        return `/chi-siamo/oggi/il-comandante-generale/ordine-del-giorno/${slug}`;
+      }
+      
+      default: {
+        // Content-types senza preview
+        return null;
+      }
+    }
+  };
+  
+  return {
+    auth: {
+      secret: env('ADMIN_JWT_SECRET'),
+    },
+    apiToken: {
+      salt: env('API_TOKEN_SALT'),
+    },
+    transfer: {
+      token: {
+        salt: env('TRANSFER_TOKEN_SALT'),
+      },
+    },
+    secrets: {
+      encryptionKey: env('ENCRYPTION_KEY'),
+    },
+    flags: {
+      nps: env.bool('FLAG_NPS', true),
+      promoteEE: env.bool('FLAG_PROMOTE_EE', true),
+    },  
+     preview: {
+      enabled: true, // Abilita la funzionalità Preview
+      config: {
+        allowedOrigins: clientUrl, // Permetti al frontend di essere caricato in iframe
+        
+        async handler(uid, { documentId, locale, status }) {
+          // Recupera il documento completo da Strapi
+          const document = await strapi.documents(uid).findOne({ documentId });
+          
+          // Genera il pathname di preview
+          const pathname = getPreviewPathname(uid, { locale, document });
+          
+          // Se non c'è un pathname, disabilita il preview per questo content-type
+          if (!pathname) {
+            return null;
+          }
+          
+          // Costruisci l'URL di preview con i query params
+          const urlSearchParams = new URLSearchParams({
+            slug: document.slug,
+            status, // 'draft' o 'published'
+            secret: previewSecret, // Secret per validazione
+          });
+          
+          const previewUrl = `${clientUrl}/preview?${urlSearchParams}`;
+
+          return previewUrl;
+        },
+      },
+    },
+  };
+};

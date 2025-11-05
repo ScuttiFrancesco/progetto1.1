@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_editorias",
+  "info": {
+    "singularName": "categoria-editoria",
+    "pluralName": "categoria-editorias",
+    "displayName": "Categoria Editoria"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

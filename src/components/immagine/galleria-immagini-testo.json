@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_immagine_galleria_immagini_testos",
+  "info": {
+    "displayName": "galleria-immagini-testo"
+  },
+  "options": {},
+  "attributes": {
+    "immagini": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

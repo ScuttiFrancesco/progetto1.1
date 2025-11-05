@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_pubblicazionis",
+  "info": {
+    "singularName": "categoria-pubblicazioni",
+    "pluralName": "categoria-pubblicazionis",
+    "displayName": "Categoria Pubblicazioni"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_core_header_top_bars",
+  "info": {
+    "displayName": "header-top-bar"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "component",
+      "component": "shared.image",
+      "repeatable": false
+    },
+    "isVisibile": {
+      "type": "boolean",
+      "default": true
+    },
+    "icons": {
+      "type": "component",
+      "component": "shared.image",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

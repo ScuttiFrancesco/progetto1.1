@@ -1,0 +1,8 @@
+# Requirements per lo script di migrazione
+# Install con: pip install -r requirements.txt
+
+# Per output colorato su Windows
+colorama>=0.4.6
+
+# Per creare eseguibile standalone (opzionale)
+pyinstaller>=6.0.0

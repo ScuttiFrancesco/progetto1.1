@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_coespus",
+  "info": {
+    "singularName": "categoria-coespu",
+    "pluralName": "categoria-coespus",
+    "displayName": "Categoria Coespu"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_url_url_addizionalis",
+  "info": {
+    "displayName": "url-addizionali"
+  },
+  "options": {},
+  "attributes": {
+    "path": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

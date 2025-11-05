@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_layout_tabellas",
+  "info": {
+    "displayName": "tabella"
+  },
+  "options": {},
+  "attributes": {
+    "colonne": {
+      "type": "component",
+      "component": "shared.colonna",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

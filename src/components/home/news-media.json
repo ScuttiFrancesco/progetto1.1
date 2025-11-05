@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_home_news_medias",
+  "info": {
+    "displayName": "news-media"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "newsMediaBoxes": {
+      "type": "component",
+      "component": "shared.news-media-box",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

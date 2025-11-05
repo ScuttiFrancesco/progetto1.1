@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_attis",
+  "info": {
+    "singularName": "categoria-atti",
+    "pluralName": "categoria-attis",
+    "displayName": "Categoria Atti"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "attis": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::atti.atti",
+      "mappedBy": "categoria_attis"
+    }
+  }
+}

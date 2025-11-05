@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_leggis",
+  "info": {
+    "singularName": "categoria-leggi",
+    "pluralName": "categoria-leggis",
+    "displayName": "Categoria Leggi"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

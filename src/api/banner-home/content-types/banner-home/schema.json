@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banner_homes",
+  "info": {
+    "singularName": "banner-home",
+    "pluralName": "banner-homes",
+    "displayName": "Banner Home"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titoloNascosto": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "sottotitolo": {
+      "type": "text"
+    },
+    "redirectUrl": {
+      "type": "string"
+    },
+    "redirectNewPage": {
+      "type": "boolean"
+    },
+    "ordine": {
+      "type": "integer",
+      "required": true
+    },
+    "pulsanteScopri_da_verificare": {
+      "type": "boolean"
+     
+    },
+    "thumb": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    }
+  }
+}

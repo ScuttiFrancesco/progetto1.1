@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_widget_archivios",
+  "info": {
+    "displayName": "archivio"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

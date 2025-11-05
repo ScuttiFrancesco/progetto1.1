@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_core_header_mains",
+  "info": {
+    "displayName": "header-main"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "component",
+      "component": "shared.image",
+      "repeatable": false
+    },
+    "immagineSinistra": {
+      "type": "component",
+      "component": "shared.image",
+      "repeatable": false
+    },
+    "immagineDestra": {
+      "type": "component",
+      "component": "shared.image",
+      "repeatable": false
+    },
+    "immagineDestraMobile": {
+      "type": "component",
+      "component": "shared.image",
+      "repeatable": false
+    },
+    "isVisibile": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

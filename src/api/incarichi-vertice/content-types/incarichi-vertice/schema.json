@@ -1,0 +1,85 @@
+{
+  "kind": "collectionType",
+  "collectionName": "incarichi_vertices",
+  "info": {
+    "singularName": "incarichi-vertice",
+    "pluralName": "incarichi-vertices",
+    "displayName": "Incarichi Vertice"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "incarico": {
+      "type": "text"
+    },
+    "attoDiConferimento": {
+      "type": "text"
+    },
+    "scadenza": {
+      "type": "text"
+    },
+    "urlModelloA": {
+      "type": "text"
+    },
+    "urlModelloB": {
+      "type": "text"
+    },
+    "urlDichiarazioniAssenza": {
+      "type": "text"
+    },
+    "grado": {
+      "type": "string"
+    },
+    "nome": {
+      "type": "string"
+    },
+    "cognome": {
+      "type": "string"
+    },
+     "composizioneSottotitolo": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "composizioneTitle": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": false
+    }
+  }
+}

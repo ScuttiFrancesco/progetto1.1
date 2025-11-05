@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "entis",
+  "info": {
+    "singularName": "enti",
+    "pluralName": "entis",
+    "displayName": "Enti"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "filePrimoTrimestre": {
+      "type": "string"
+    },
+    "fileSecondoTrimestre": {
+      "type": "string"
+    },
+    "fileTerzoTrimestre": {
+      "type": "string"
+    },
+    "fileQuartoTrimestre": {
+      "type": "string"
+    },
+     "composizioneSottotitolo": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "composizioneTitle": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    }
+  }
+}

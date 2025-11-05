@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_core_footer_mains",
+  "info": {
+    "displayName": "footer-main"
+  },
+  "options": {},
+  "attributes": {
+    "immagineSuperiore": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "logo": {
+      "type": "component",
+      "component": "shared.image",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

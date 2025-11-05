@@ -1,0 +1,109 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articolis",
+  "info": {
+    "singularName": "articoli",
+    "pluralName": "articolis",
+    "displayName": "Articoli"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "data": {
+      "type": "datetime",
+      "required": true
+    },
+    "sommario_da_verificare": {
+      "type": "richtext"
+    },
+    "immagineInEvidenza": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "immagineInPrimoPiano": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "categoria_silvaes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::categoria-silvae.categoria-silvae",
+      "inversedBy": "articolis"
+    },
+    "listaLink": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+    "allegati_widget": {
+      "type": "string"
+    },
+    "fotoGallery": {
+      "type": "component",
+      "component": "immagine.galleria-immagini",
+      "repeatable": false
+    },
+    "composizioneSottotitolo": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "composizioneTitle": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": false
+    },
+    "testo": {
+      "type": "richtext"
+    },
+    "autore": {
+      "type": "richtext"
+    },
+    "seo": {                  
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medaglies",
+  "info": {
+    "singularName": "medaglie",
+    "pluralName": "medaglies",
+    "displayName": "Medaglie"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "grado": {
+      "type": "string"
+    },
+    "dataConcessione": {
+      "type": "string"
+    },
+    "dataLuogoNascita": {
+      "type": "string"
+    },
+    "dataLuogoMorte": {
+      "type": "string"
+    },
+    "dataLuogoFatto": {
+      "type": "string"
+    },
+    "motivazione": {
+      "type": "text"
+    },
+    "note": {
+      "type": "text"
+    },
+    "immagini_da_verificare": {
+      "type": "text"
+    },
+    "linkUtili": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+    "categoria_medaglieres": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::categoria-medagliere.categoria-medagliere",
+      "mappedBy": "medaglies"
+    },
+     "composizioneSottotitolo": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "composizioneTitle": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": false
+    }
+  }
+}

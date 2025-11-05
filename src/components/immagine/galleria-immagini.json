@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_immagine_galleria_immaginis",
+  "info": {
+    "displayName": "galleria-immagini"
+  },
+  "options": {},
+  "attributes": {
+    "immagini": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

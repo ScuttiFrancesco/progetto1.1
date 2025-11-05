@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_wrapper_bottonis",
+  "info": {
+    "displayName": "wrapper-bottoni"
+  },
+  "options": {},
+  "attributes": {
+    "bottoni": {
+      "type": "component",
+      "component": "shared.bottone",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

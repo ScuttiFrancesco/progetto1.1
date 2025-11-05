@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoria_gare_appaltos",
+  "info": {
+    "singularName": "categoria-gare-appalto",
+    "pluralName": "categoria-gare-appaltos",
+    "displayName": "Categoria Gare Appalto"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "gare_appaltos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::gare-appalto.gare-appalto",
+      "inversedBy": "categoria_gare_appaltos"
+    }
+  }
+}

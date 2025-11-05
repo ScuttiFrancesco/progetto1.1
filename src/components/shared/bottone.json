@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_bottones",
+  "info": {
+    "displayName": "bottone"
+  },
+  "options": {},
+  "attributes": {
+    "testi": {
+      "type": "component",
+      "component": "shared.testo",
+      "repeatable": true
+    },
+    "icona": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "url": {
+      "type": "string"
+    },
+    "nuovaPagina": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

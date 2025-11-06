@@ -30,7 +30,8 @@
       "default": "wrapper",
       "enum": [
         "statico",
-        "wrapper"
+        "wrapper",
+        "pagina"
       ]
     },
     "url_addizionali": {

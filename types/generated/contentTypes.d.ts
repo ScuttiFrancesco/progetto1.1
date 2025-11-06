@@ -2225,7 +2225,7 @@ export interface ApiPaginaPagina extends Struct.CollectionTypeSchema {
         'widget.allegati',
       ]
     >;
-    tipoLayout: Schema.Attribute.Enumeration<['statico', 'wrapper']> &
+    tipoLayout: Schema.Attribute.Enumeration<['statico', 'wrapper', 'pagina']> &
       Schema.Attribute.DefaultTo<'wrapper'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;

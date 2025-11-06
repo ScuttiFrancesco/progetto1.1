@@ -249,7 +249,7 @@ export default () => ({
       if (Array.isArray(result)) {
         // Se il filtro è attivo e c'è almeno una pagina con tipoLayout
         if (filterTipoLayout) {
-          const staticPage = result.find(r => r.tipoLayout === 'statico');
+          const staticPage = result.find(r => r.tipoLayout === 'pagina');
           if (staticPage) {
 
             return staticPage;
@@ -379,7 +379,7 @@ export default () => ({
 
       // Se ci sono più risultati, filtra per tipoLayout='statico'
       if (filterTipoLayout) {
-        const staticPage = results.find(r => r.tipoLayout === 'statico');
+        const staticPage = results.find(r => r.tipoLayout === 'pagina');
         if (staticPage) {
 
           return staticPage;

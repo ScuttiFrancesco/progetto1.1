@@ -2155,6 +2155,38 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiOrdineDelGiornoOrdineDelGiorno
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'ordine_del_giornos';
+  info: {
+    displayName: 'Ordine del giorno';
+    pluralName: 'ordine-del-giornos';
+    singularName: 'ordine-del-giorno';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data: Schema.Attribute.Date;
+    download: Schema.Attribute.Media<'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ordine-del-giorno.ordine-del-giorno'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPaginaPagina extends Struct.CollectionTypeSchema {
   collectionName: 'paginas';
   info: {
@@ -2783,6 +2815,7 @@ declare module '@strapi/strapi' {
       'api::incarichi-vertice.incarichi-vertice': ApiIncarichiVerticeIncarichiVertice;
       'api::medaglie.medaglie': ApiMedaglieMedaglie;
       'api::new.new': ApiNewNew;
+      'api::ordine-del-giorno.ordine-del-giorno': ApiOrdineDelGiornoOrdineDelGiorno;
       'api::pagina.pagina': ApiPaginaPagina;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

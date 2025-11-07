@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ordine_del_giornos",
+  "info": {
+    "singularName": "ordine-del-giorno",
+    "pluralName": "ordine-del-giornos",
+    "displayName": "Ordine del giorno"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "download": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "data": {
+      "type": "date"
+    }
+  }
+}

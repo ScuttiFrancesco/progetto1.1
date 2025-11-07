@@ -82,8 +82,12 @@ export default {
             id: result.id,
             contentType: result.contentType,
             tipoLayout: result.tipoLayout,
-            resolvedFrom: result.isPrimary ? 'slug' : 'url_addizionali',
+            resolvedFrom: result.resolvedFrom || (result.isPrimary ? 'slug' : 'url_addizionali'),
             requestedPath: path,
+            // Includi campi opzionali se presenti (da fallback)
+            ...(result.title && { title: result.title }),
+            ...(result.titolo && { titolo: result.titolo }),
+            ...(result.titoloBreve && { titoloBreve: result.titoloBreve }),
           },
         };
       }

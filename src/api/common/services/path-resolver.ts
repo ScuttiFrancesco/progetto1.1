@@ -367,9 +367,9 @@ export default () => ({
         }
       }
 
-      // Se non ci sono risultati
+      // Se non ci sono risultati, prova fallback slug search
       if (results.length === 0) {
-        return null;
+        return await this.fallbackSlugSearch(normalizedPath);
       }
 
       // Se c'è un solo risultato
@@ -389,6 +389,90 @@ export default () => ({
       // Restituisce tutti i risultati
 
       return results;
+    } catch (error) {
+
+      return null;
+    }
+  },
+
+  /**
+   * Fallback: cerca per slug l'ultimo segmento del path
+   * Cerca solo nelle collection specificate nella whitelist
+   */
+  async fallbackSlugSearch(normalizedPath: string) {
+    try {
+      // Estrai lo slug (ultimo segmento del path)
+      const pathSegments = normalizedPath.split('/').filter(Boolean);
+      if (pathSegments.length === 0) return null;
+      
+      const slug = pathSegments[pathSegments.length - 1];
+      
+      // Whitelist delle collection da cercare (in ordine di priorità)
+      // Puoi modificare questa lista aggiungendo/rimuovendo collection
+      const collectionWhitelist = [
+        'api::comunicati-stampa.comunicati-stampa',
+        'api::new.new',
+        'api::articoli.articoli',
+        'api::appuntamenti.appuntamenti',
+        'api::appuntamenti-storia.appuntamenti-storia',
+        'api::atti.atti',
+        'api::comunicazioni-cocer.comunicazioni-cocer',
+        'api::contatti.contatti',
+        'api::enti.enti',
+        'api::eventi.eventi',
+        'api::ordine-del-giorno.ordine-del-giorno',
+        'api::gare-appalto.gare-appalto',
+        'api::incarichi-vertice.incarichi-vertice',
+        'api::medaglie.medaglie',
+        // Aggiungi altre collection qui se necessario
+      ];
+
+      // Cerca lo slug in ogni collection della whitelist
+      for (const contentTypeUID of collectionWhitelist) {
+        // Verifica che la collection esista
+        const contentType = strapi.contentTypes[contentTypeUID];
+        if (!contentType || contentType.kind !== 'collectionType') continue;
+
+        const attributes = contentType.attributes || {};
+        if (!attributes.slug) continue;
+
+        // Prepara i campi da recuperare
+        const fields: any = ['id', 'slug', 'documentId', 'publishedAt'];
+        
+        // Aggiungi campi comuni se esistono
+        if (attributes.title) fields.push('title');
+        if (attributes.titolo) fields.push('titolo');
+        if (attributes.titoloBreve) fields.push('titoloBreve');
+
+        const entities: any = await strapi.entityService.findMany(contentTypeUID as any, {
+          filters: {
+            slug: slug,
+          },
+          fields,
+          status: 'published',
+          limit: 1,
+        });
+
+        if (entities && entities.length > 0 && entities[0].publishedAt) {
+          const entity = entities[0];
+          
+          return {
+            slug: entity.slug,
+            documentId: entity.documentId,
+            id: entity.id,
+            isPrimary: true,
+            contentType: contentTypeUID,
+            resolvedFrom: 'fallback-slug',
+            // Includi il campo title/titolo se presente
+            ...(entity.title && { title: entity.title }),
+            ...(entity.titolo && { titolo: entity.titolo }),
+            ...(entity.titoloBreve && { titoloBreve: entity.titoloBreve }),
+          };
+        }
+      }
+
+      // Se non trova nulla, ritorna null (404)
+      return null;
     } catch (error) {
 
       return null;

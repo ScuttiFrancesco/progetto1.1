@@ -42,7 +42,7 @@ interface PathMap {
   }[];
 }
 
-export default () => ({
+export default ({ strapi }: { strapi: any }) => ({
   pathMap: null as PathMap | null,
   isInitialized: false,
   isInitializing: false,

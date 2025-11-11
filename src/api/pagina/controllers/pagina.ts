@@ -87,6 +87,7 @@ async function findDescendants(parentId: number, maxDepth: number = Infinity, cu
     where: { 
       id: { $in: publishedIds }
     },
+    populate: { url_addizionali: true }, // Popola gli URL addizionali per ogni figlio
   });
 
   // Per ogni figlio, trova ricorsivamente i suoi discendenti
@@ -111,7 +112,7 @@ function reduceToSlugAndChildren(node: Pagina | Pagina[] | null): any {
     documentId: node.documentId,
     ordineVisualizzazioneMenu: node.ordineVisualizzazioneMenu,
     mostraInMenu: node.mostraInMenu,
-    url_addizionali: node['url_addizionali'] || [],
+    url_addizionali: node['url_addizionali'],
     children: node.children ? reduceToSlugAndChildren(node.children) : [],
   };
 }

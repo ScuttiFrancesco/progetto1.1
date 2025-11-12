@@ -92,12 +92,18 @@ export default ({ strapi }: { strapi: any }) => ({
       const pathParts: string[] = [];
       let currentNode = entity;
 
+      // Lista di slug da escludere dal path (contenitori organizzativi)
+      const excludedSlugs = ['header-menu', 'footer-menu'];
+
       // Risali la gerarchia fino alla radice
       let depth = 0;
       const maxDepth = 10; // Evita loop infiniti
       
       while (currentNode && depth < maxDepth) {
-        pathParts.unshift(currentNode.slug); // Aggiungi all'inizio
+        // Aggiungi lo slug solo se NON è nella lista degli esclusi
+        if (!excludedSlugs.includes(currentNode.slug)) {
+          pathParts.unshift(currentNode.slug); // Aggiungi all'inizio
+        }
         
         // Passa al parent
         if (currentNode[parentField]) {

@@ -10,6 +10,7 @@ export default [
           'connect-src': ["'self'", 'https:', 'http:'],
           'img-src': ["'self'", 'data:', 'blob:', 'https://storage.googleapis.com'],
           'media-src': ["'self'", 'data:', 'blob:', 'https://storage.googleapis.com'],
+          'script-src': ["'self'", "'unsafe-inline'", 'cdn.jsdelivr.net'],
         },
       },
     },

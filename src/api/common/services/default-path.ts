@@ -23,7 +23,7 @@
  * per tutte le collection con componente url_addizionali
  */
 
-export default () => ({
+export default ({ strapi }: { strapi: any }) => ({
   /**
    * Trova il campo parent per una collection
    * (cerca una relazione oneToOne verso la stessa collection)

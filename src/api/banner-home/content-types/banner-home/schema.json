@@ -43,6 +43,11 @@
         "images",
         "videos"
       ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": false
     }
   }
 }

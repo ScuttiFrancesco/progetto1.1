@@ -49,23 +49,27 @@ export default {
   register(/* { strapi }: { strapi: Core.Strapi } */) {},
 
   async bootstrap({ strapi }: { strapi: StrapiLike }) {
-    // ==========================================
-    // PATH RESOLVER SERVICE
-    // ==========================================
-    // Sistema di risoluzione path O(1) con cache in-memory.
-    // Mappa tutti i path (default + addizionali) alle rispettive entity.
-    // Gestisce automaticamente duplicati filtrando per tipoLayout='statico'.
-    // Si invalida automaticamente su create/update/delete di qualsiasi collection con slug.
-    // ==========================================
-    const pathResolver = strapi.service('api::common.path-resolver');
-    if (pathResolver?.initialize) {
-      await pathResolver.initialize();
-    }
+    try {
+      // Attendi che Strapi sia completamente inizializzato dopo modifiche ai content-type
+      await new Promise(resolve => setTimeout(resolve, 2000));
 
-    const collectionsWithSlug = Object.keys(strapi.contentTypes).filter(uid => {
-      const ct = strapi.contentTypes[uid];
-      return ct?.kind === 'collectionType' && ct.attributes?.slug;
-    });
+      // ==========================================
+      // PATH RESOLVER SERVICE
+      // ==========================================
+      // Sistema di risoluzione path O(1) con cache in-memory.
+      // Mappa tutti i path (slug + url_addizionali) alle rispettive entity.
+      // Gestisce automaticamente duplicati filtrando per tipoLayout='statico'.
+      // Si invalida automaticamente su create/update/delete di qualsiasi collection con slug.
+      // ==========================================
+      const pathResolver = strapi.service('api::common.path-resolver');
+      if (pathResolver?.initialize) {
+        await pathResolver.initialize();
+      }
+
+      const collectionsWithSlug = Object.keys(strapi.contentTypes).filter(uid => {
+        const ct = strapi.contentTypes[uid];
+        return ct?.kind === 'collectionType' && ct.attributes?.slug;
+      });
 
     collectionsWithSlug.forEach(uid => {
       strapi.db.lifecycles.subscribe({
@@ -374,6 +378,10 @@ export default {
         await ensureDefaultPath(strapi, event, 'afterUpdate');
       },
     });
+    } catch (error) {
+      strapi.log.error('[Bootstrap] Fatal error during initialization:', error);
+      strapi.log.error('[Bootstrap] Strapi will continue but some features may not work correctly');
+    }
   },
 };
 

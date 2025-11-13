@@ -1,9 +1,0 @@
-{
-  "extends": "../../../tsconfig.json",
-  "include": ["./strapi-admin.ts", "./admin/src/**/*"],
-  "compilerOptions": {
-    "isolatedModules": true,
-  "allowJs": true,
-  "jsx": "react-jsx"
-  }
-}

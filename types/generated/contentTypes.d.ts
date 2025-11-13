@@ -746,6 +746,7 @@ export interface ApiBannerHomeBannerHome extends Struct.CollectionTypeSchema {
     pulsanteScopri_da_verificare: Schema.Attribute.Boolean;
     redirectNewPage: Schema.Attribute.Boolean;
     redirectUrl: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'title'>;
     sottotitolo: Schema.Attribute.Text;
     thumb: Schema.Attribute.Media<'images' | 'videos'> &
       Schema.Attribute.Required;
@@ -1921,6 +1922,7 @@ export interface ApiInPrimoPianoInPrimoPiano
     redirectUrl: Schema.Attribute.String & Schema.Attribute.Required;
     redirectUrlNewPage: Schema.Attribute.Boolean;
     senzaTitolo: Schema.Attribute.String & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'>;
     thumb: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;

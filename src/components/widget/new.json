@@ -8,7 +8,7 @@
     "title": {
       "type": "string"
     },
-    "colonna": {
+    "colonne": {
       "type": "component",
       "component": "shared.colonna",
       "repeatable": true,

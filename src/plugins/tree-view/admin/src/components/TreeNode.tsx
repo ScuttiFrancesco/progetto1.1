@@ -128,6 +128,18 @@ export const TreeNode: React.FC<TreeNodeProps> = ({ node, level = 0, contentType
     const createUrl = `/admin/content-manager/collection-types/${contentType}/create`;
     window.location.href = createUrl;
   };
+
+  // Funzione per navigare alla pagina di modifica
+  const handleGoToPage = () => {
+    if (!contentType) return;
+    
+    // Usa il documentId (Strapi v5) o fallback su id
+    const entityId = node.raw?.documentId || node.documentId || node.id;
+    
+    // Naviga alla pagina di modifica
+    const editUrl = `/admin/content-manager/collection-types/${contentType}/${entityId}`;
+    window.location.href = editUrl;
+  };
   
   return (
     <div style={{ marginBottom: '6px' }} >
@@ -196,14 +208,39 @@ export const TreeNode: React.FC<TreeNodeProps> = ({ node, level = 0, contentType
         }}>
           {node.label}
         </span>
-        
+        {contentType === 'api::pagina.pagina' && (
+          <button
+            type="button"
+            onClick={handleGoToPage}
+            style={{
+              background: '#a2b11bff',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              padding: '4px 8px',
+              fontSize: '12px',
+              cursor: 'pointer',
+              marginLeft: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              opacity: 0.8,
+              transition: 'opacity 0.2s ease'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
+            onMouseLeave={(e) => e.currentTarget.style.opacity = '0.8'}
+            title={`Vai alla pagina "${node.label}"`}
+          >            
+            <span>Vai alla Pagina</span>
+          </button>
+        )}
         {/* Bottone per aggiungere un figlio - solo per la collection pagina */}
         {contentType === 'api::pagina.pagina' && (
           <button
             type="button"
             onClick={handleAddChild}
             style={{
-              background: '#28a745',
+              background: '#0313a0ff',
               color: 'white',
               border: 'none',
               borderRadius: '4px',

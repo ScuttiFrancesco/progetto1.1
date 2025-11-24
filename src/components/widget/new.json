@@ -22,25 +22,25 @@
           "composizioneColonna": "[\"data\"]"
         },
         {
-          "etichetta": "fonte",
+          "etichetta": "sourceName",
           "isCliccabile": false,
           "tipo": "text",
           "nomeColonna": "fonte",
-          "composizioneColonna": "[\"fonte\"]"
+          "composizioneColonna": "[\"sourceName\"]"
         },
         {
           "etichetta": "title",
           "isCliccabile": true,
           "tipo": "text",
-          "nomeColonna": "title",
+          "nomeColonna": "titolo",
           "composizioneColonna": "[\"title\"]"
         },
         {
-          "etichetta": "descrizione",
+          "etichetta": "description",
           "isCliccabile": false,
           "tipo": "text",
           "nomeColonna": "descrizione",
-          "composizioneColonna": "[\"descrizione\"]"
+          "composizioneColonna": "[\"description\"]"
         }
       ]
     },

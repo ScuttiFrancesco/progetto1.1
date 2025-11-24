@@ -440,6 +440,66 @@ export interface WidgetComunicati extends Struct.ComponentSchema {
   };
 }
 
+export interface WidgetContatti extends Struct.ComponentSchema {
+  collectionName: 'components_widget_contattis';
+  info: {
+    displayName: 'contatti';
+  };
+  attributes: {
+    colonne: Schema.Attribute.Component<'shared.colonna', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<
+        [
+          {
+            composizioneColonna: '["title"]';
+            etichetta: 'title';
+            isCliccabile: false;
+            nomeColonna: 'comando';
+            tipo: 'text';
+          },
+          {
+            composizioneColonna: '["sede"]';
+            etichetta: 'sede';
+            isCliccabile: false;
+            nomeColonna: 'sede';
+            tipo: 'text';
+          },
+          {
+            composizioneColonna: '["telefono","fax"]';
+            etichetta: 'telefono e fax';
+            isCliccabile: false;
+            nomeColonna: 'telefono e fax';
+            tipo: 'text';
+          },
+          {
+            composizioneColonna: '["email"]';
+            etichetta: 'email';
+            isCliccabile: false;
+            nomeColonna: 'e-mail';
+            tipo: 'text';
+          },
+          {
+            composizioneColonna: '["postaElettronicaCertificata"]';
+            etichetta: 'postaElettronicaCertificata';
+            isCliccabile: false;
+            nomeColonna: 'posta elettronica certificata';
+            tipo: 'text';
+          },
+        ]
+      >;
+    numElementiDaMostrare: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 20;
+          min: 5;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<5>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface WidgetEventi extends Struct.ComponentSchema {
   collectionName: 'components_widget_eventis';
   info: {
@@ -531,7 +591,7 @@ export interface WidgetNew extends Struct.ComponentSchema {
     displayName: 'news';
   };
   attributes: {
-    colonna: Schema.Attribute.Component<'shared.colonna', true> &
+    colonne: Schema.Attribute.Component<'shared.colonna', true> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<
         [
@@ -543,8 +603,8 @@ export interface WidgetNew extends Struct.ComponentSchema {
             tipo: 'dateTime';
           },
           {
-            composizioneColonna: '["fonte"]';
-            etichetta: 'fonte';
+            composizioneColonna: '["sourceName"]';
+            etichetta: 'sourceName';
             isCliccabile: false;
             nomeColonna: 'fonte';
             tipo: 'text';
@@ -557,8 +617,8 @@ export interface WidgetNew extends Struct.ComponentSchema {
             tipo: 'text';
           },
           {
-            composizioneColonna: '["descrizione"]';
-            etichetta: 'descrizione';
+            composizioneColonna: '["content"]';
+            etichetta: 'content';
             isCliccabile: false;
             nomeColonna: 'descrizione';
             tipo: 'text';
@@ -663,6 +723,7 @@ declare module '@strapi/strapi' {
       'widget.archivio': WidgetArchivio;
       'widget.articolo': WidgetArticolo;
       'widget.comunicati': WidgetComunicati;
+      'widget.contatti': WidgetContatti;
       'widget.eventi': WidgetEventi;
       'widget.filtro': WidgetFiltro;
       'widget.info': WidgetInfo;

@@ -2090,49 +2090,10 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: true;
   };
-  pluginOptions: {
-    i18n: {
-      localized: false;
-    };
-  };
   attributes: {
     author: Schema.Attribute.String;
     category_da_verificare: Schema.Attribute.Text;
-    composizioneSottotitolo: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
-    composizioneTitle: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
-    content_da_verificare: Schema.Attribute.Text;
+    content: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -9,17 +9,13 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": false
-    }
-  },
+  "pluginOptions": {},
   "attributes": {
     "title": {
       "type": "string",
       "required": true
     },
-    "content_da_verificare": {
+    "content": {
       "type": "text"
     },
     "author": {
@@ -55,40 +51,6 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
-    },
-    "composizioneSottotitolo": {
-      "type": "customField",
-      "customField": "plugin::multi-select.multi-select",
-      "default": "[]",
-      "options": [
-        "data",
-        "dataInizio",
-        "dataFine",
-        "title",
-        "fonte",
-        "comune",
-        "ruolo",
-        "stato",
-        "contratto",
-        "autore"
-      ]
-    },
-    "composizioneTitle": {
-      "type": "customField",
-      "customField": "plugin::multi-select.multi-select",
-      "default": "[]",
-      "options": [
-        "data",
-        "dataInizio",
-        "dataFine",
-        "title",
-        "fonte",
-        "comune",
-        "ruolo",
-        "stato",
-        "contratto",
-        "autore"
-      ]
     },
     "category_da_verificare": {
       "type": "text"

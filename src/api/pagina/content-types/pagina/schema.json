@@ -15,6 +15,9 @@
       "type": "string",
       "required": true
     },
+     "titolo": {
+      "type": "string"
+    },
     "slug": {
       "type": "uid",
       "targetField": "title",
@@ -88,6 +91,40 @@
         "widget.filtro",
         "widget.archivio",
         "widget.allegati"
+      ]
+    },
+    "composizioneSottotitolo": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
+      ]
+    },
+    "composizioneTitle": {
+      "type": "customField",
+      "customField": "plugin::multi-select.multi-select",
+      "default": "[]",
+      "options": [
+        "data",
+        "dataInizio",
+        "dataFine",
+        "title",
+        "fonte",
+        "comune",
+        "ruolo",
+        "stato",
+        "contratto",
+        "autore"
       ]
     }
   }

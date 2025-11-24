@@ -25,7 +25,7 @@
           "etichetta": "title",
           "isCliccabile": true,
           "tipo": "text",
-          "nomeColonna": "title",
+          "nomeColonna": "titolo",
           "composizioneColonna": "[\"comune\",\"title\"]"
         },
         {
@@ -36,11 +36,11 @@
           "composizioneColonna": "[\"fonte\"]"
         },
         {
-          "etichetta": "descrizione",
+          "etichetta": "contenuto",
           "isCliccabile": false,
           "tipo": "text",
           "nomeColonna": "descrizione",
-          "composizioneColonna": "[\"descrizione\"]"
+          "composizioneColonna": "[\"contenuto\"]"
         }
       ]
     },

@@ -50,40 +50,7 @@
       "target": "api::categoria-medagliere.categoria-medagliere",
       "mappedBy": "medaglies"
     },
-     "composizioneSottotitolo": {
-      "type": "customField",
-      "customField": "plugin::multi-select.multi-select",
-      "default": "[]",
-      "options": [
-        "data",
-        "dataInizio",
-        "dataFine",
-        "title",
-        "fonte",
-        "comune",
-        "ruolo",
-        "stato",
-        "contratto",
-        "autore"
-      ]
-    },
-    "composizioneTitle": {
-      "type": "customField",
-      "customField": "plugin::multi-select.multi-select",
-      "default": "[]",
-      "options": [
-        "data",
-        "dataInizio",
-        "dataFine",
-        "title",
-        "fonte",
-        "comune",
-        "ruolo",
-        "stato",
-        "contratto",
-        "autore"
-      ]
-    },
+
     "slug": {
       "type": "uid",
       "targetField": "title",

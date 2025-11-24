@@ -42,8 +42,12 @@
         "ciao"
       ]
     },
-    "descrizione_da_verificare": {
-      "type": "richtext"
+    "descrizione": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "regioniCompetenza_da_verificare": {
       "type": "enumeration",
@@ -84,8 +88,12 @@
     "atti": {
       "type": "date"
     },
-    "allegati_widget_______": {
-      "type": "string"
+   "allegati": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "bando": {
       "type": "media",
@@ -109,11 +117,12 @@
       ]
     },
     "listaLink": {
-      "type": "component",
-      "component": "shared.link",
-      "repeatable": true
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
-
     "slug": {
       "type": "uid",
       "targetField": "title",

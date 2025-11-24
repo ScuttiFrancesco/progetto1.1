@@ -40,9 +40,11 @@
       "type": "text"
     },
     "linkUtili": {
-      "type": "component",
-      "component": "shared.link",
-      "repeatable": true
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "categoria_medaglieres": {
       "type": "relation",

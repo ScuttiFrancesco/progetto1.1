@@ -19,8 +19,12 @@
       "type": "datetime",
       "required": true
     },
-    "sommario_da_verificare": {
-      "type": "richtext"
+    "sommario": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "immagineInEvidenza": {
       "type": "media",
@@ -43,9 +47,11 @@
       "inversedBy": "articolis"
     },
     "listaLink": {
-      "type": "component",
-      "component": "shared.link",
-      "repeatable": true
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "allegati_widget": {
       "type": "string"

@@ -442,40 +442,6 @@ export interface ApiAppuntamentiStoriaAppuntamentiStoria
     draftAndPublish: true;
   };
   attributes: {
-    composizioneSottotitolo: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
-    composizioneTitle: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -510,42 +476,14 @@ export interface ApiAppuntamentiAppuntamenti
   };
   attributes: {
     allegati_widget: Schema.Attribute.String;
-    composizioneSottotitolo: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
-    composizioneTitle: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
     comune: Schema.Attribute.String;
-    contenuto_da_verificare: Schema.Attribute.RichText;
+    contenuto: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -556,7 +494,13 @@ export interface ApiAppuntamentiAppuntamenti
     >;
     ignoraDataFine: Schema.Attribute.Boolean;
     inEvidenza: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    listaLink: Schema.Attribute.Component<'shared.link', true>;
+    listaLink: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -589,40 +533,6 @@ export interface ApiArticoliArticoli extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::categoria-silvae.categoria-silvae'
     >;
-    composizioneSottotitolo: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
-    composizioneTitle: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -633,7 +543,13 @@ export interface ApiArticoliArticoli extends Struct.CollectionTypeSchema {
     >;
     immagineInEvidenza: Schema.Attribute.Media<'images'>;
     immagineInPrimoPiano: Schema.Attribute.Media<'images'>;
-    listaLink: Schema.Attribute.Component<'shared.link', true>;
+    listaLink: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -643,7 +559,13 @@ export interface ApiArticoliArticoli extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
-    sommario_da_verificare: Schema.Attribute.RichText;
+    sommario: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     testo: Schema.Attribute.RichText;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -668,46 +590,24 @@ export interface ApiAttiAtti extends Struct.CollectionTypeSchema {
       'api::categoria-atti.categoria-atti'
     >;
     CIG: Schema.Attribute.Text;
-    composizioneSottotitolo: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
-    composizioneTitle: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    curriculum_da_verificare: Schema.Attribute.String;
+    curriculum: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     data: Schema.Attribute.DateTime;
-    documento_da_verificare: Schema.Attribute.String;
+    documento: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::atti.atti'> &
       Schema.Attribute.Private;
@@ -1371,42 +1271,14 @@ export interface ApiComunicatiStampaComunicatiStampa
     draftAndPublish: true;
   };
   attributes: {
-    composizioneSottotitolo: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
-    composizioneTitle: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
     comune: Schema.Attribute.String;
-    contenuto_da_verificare: Schema.Attribute.RichText;
+    contenuto: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1416,7 +1288,13 @@ export interface ApiComunicatiStampaComunicatiStampa
       'immagine.galleria-immagini',
       false
     >;
-    listaLink: Schema.Attribute.Component<'shared.link', true>;
+    listaLink: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1449,40 +1327,6 @@ export interface ApiComunicazioniCocerComunicazioniCocer
   attributes: {
     allegati_widget: Schema.Attribute.String;
     categoria_da_verificare: Schema.Attribute.String;
-    composizioneSottotitolo: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
-    composizioneTitle: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
     contenuto_da_verificare: Schema.Attribute.RichText;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1493,7 +1337,13 @@ export interface ApiComunicazioniCocerComunicazioniCocer
       'immagine.galleria-immagini',
       false
     >;
-    listaLink: Schema.Attribute.Component<'shared.link', true>;
+    listaLink: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1520,40 +1370,6 @@ export interface ApiContattiContatti extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    composizioneSottotitolo: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
-    composizioneTitle: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1588,40 +1404,6 @@ export interface ApiEntiEnti extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    composizioneSottotitolo: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
-    composizioneTitle: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1650,41 +1432,13 @@ export interface ApiEventiEventi extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    allegati_da_widget: Schema.Attribute.String;
-    composizioneSottotitolo: Schema.Attribute.JSON &
+    allegati: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
-    composizioneTitle: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     comune: Schema.Attribute.String;
     contenuto: Schema.Attribute.RichText;
     createdAt: Schema.Attribute.DateTime;
@@ -1711,7 +1465,13 @@ export interface ApiEventiEventi extends Struct.CollectionTypeSchema {
     redirectNewPage: Schema.Attribute.Boolean;
     redirectUrl: Schema.Attribute.String;
     slug: Schema.Attribute.UID<'title'>;
-    sommario_da_verificare: Schema.Attribute.RichText;
+    sommario: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     thumb: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     titoloNascosto: Schema.Attribute.String;
@@ -1761,7 +1521,13 @@ export interface ApiGareAppaltoGareAppalto extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    allegati_widget_______: Schema.Attribute.String;
+    allegati: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     anno: Schema.Attribute.Integer;
     annullamento: Schema.Attribute.Media<'files'>;
     assegnazione: Schema.Attribute.Media<'files'>;
@@ -1773,50 +1539,28 @@ export interface ApiGareAppaltoGareAppalto extends Struct.CollectionTypeSchema {
     >;
     codiceCig: Schema.Attribute.String;
     codiceUnivoco: Schema.Attribute.String;
-    composizioneSottotitolo: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
-    composizioneTitle: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     dataScadenza: Schema.Attribute.DateTime;
-    descrizione_da_verificare: Schema.Attribute.RichText;
+    descrizione: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     enteAppaltante_da_verificare: Schema.Attribute.Enumeration<['ciao']>;
     fonte: Schema.Attribute.String;
     fonteLista_da_verificare: Schema.Attribute.Enumeration<['ciao']>;
     idGara: Schema.Attribute.String;
-    listaLink: Schema.Attribute.Component<'shared.link', true>;
+    listaLink: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1945,40 +1689,6 @@ export interface ApiIncarichiVerticeIncarichiVertice
   attributes: {
     attoDiConferimento: Schema.Attribute.Text;
     cognome: Schema.Attribute.String;
-    composizioneSottotitolo: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
-    composizioneTitle: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2019,40 +1729,6 @@ export interface ApiMedaglieMedaglie extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::categoria-medagliere.categoria-medagliere'
     >;
-    composizioneSottotitolo: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
-    composizioneTitle: Schema.Attribute.JSON &
-      Schema.Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'data',
-          'dataInizio',
-          'dataFine',
-          'title',
-          'fonte',
-          'comune',
-          'ruolo',
-          'stato',
-          'contratto',
-          'autore',
-        ]
-      > &
-      Schema.Attribute.DefaultTo<'[]'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2062,7 +1738,13 @@ export interface ApiMedaglieMedaglie extends Struct.CollectionTypeSchema {
     dataLuogoNascita: Schema.Attribute.String;
     grado: Schema.Attribute.String;
     immagini_da_verificare: Schema.Attribute.Text;
-    linkUtili: Schema.Attribute.Component<'shared.link', true>;
+    linkUtili: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -2093,7 +1775,13 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
   attributes: {
     author: Schema.Attribute.String;
     category_da_verificare: Schema.Attribute.Text;
-    content: Schema.Attribute.Text;
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2107,7 +1795,13 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     sourceName: Schema.Attribute.String;
-    status_da_verificare: Schema.Attribute.Text;
+    status: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -2172,8 +1866,43 @@ export interface ApiPaginaPagina extends Struct.CollectionTypeSchema {
         'immagine.galleria-immagini',
         'immagine.galleria-immagini-testo',
         'widget.articolo',
+        'mappa.mappa',
       ]
     >;
+    composizioneSottotitolo: Schema.Attribute.JSON &
+      Schema.Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'data',
+          'dataInizio',
+          'dataFine',
+          'title',
+          'fonte',
+          'comune',
+          'ruolo',
+          'stato',
+          'contratto',
+          'autore',
+        ]
+      > &
+      Schema.Attribute.DefaultTo<'[]'>;
+    composizioneTitle: Schema.Attribute.JSON &
+      Schema.Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'data',
+          'dataInizio',
+          'dataFine',
+          'title',
+          'fonte',
+          'comune',
+          'ruolo',
+          'stato',
+          'contratto',
+          'autore',
+        ]
+      > &
+      Schema.Attribute.DefaultTo<'[]'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2223,6 +1952,7 @@ export interface ApiPaginaPagina extends Struct.CollectionTypeSchema {
     tipoLayout: Schema.Attribute.Enumeration<['statico', 'wrapper', 'pagina']> &
       Schema.Attribute.DefaultTo<'wrapper'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    titolo: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

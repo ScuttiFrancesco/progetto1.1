@@ -36,14 +36,15 @@
       "type": "string"
     },
     "listaLink": {
-      "type": "component",
-      "component": "shared.link",
-      "repeatable": true
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "categoria_da_verificare": {
       "type": "string"
     },
-
     "slug": {
       "type": "uid",
       "targetField": "title",

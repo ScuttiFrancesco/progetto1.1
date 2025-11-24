@@ -21,8 +21,12 @@
     "comune": {
       "type": "string"
     },
-    "contenuto_da_verificare": {
-      "type": "richtext"
+   "contenuto": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "fontePrefisso_da_verificare": {
       "type": "enumeration",
@@ -40,9 +44,11 @@
       "allowedTypes": ["images"]
     },
       "listaLink": {
-      "type": "component",
-      "component": "shared.link",
-      "repeatable": true
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "fotoGallery": {
       "type": "component",

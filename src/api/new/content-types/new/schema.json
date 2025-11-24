@@ -16,7 +16,11 @@
       "required": true
     },
     "content": {
-      "type": "text"
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "author": {
       "type": "string"
@@ -45,8 +49,12 @@
     "version": {
       "type": "integer"
     },
-    "status_da_verificare": {
-      "type": "text"
+    "status": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "slug": {
       "type": "uid",

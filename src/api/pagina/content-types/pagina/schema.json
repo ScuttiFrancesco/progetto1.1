@@ -15,7 +15,7 @@
       "type": "string",
       "required": true
     },
-     "titolo": {
+    "titolo": {
       "type": "string"
     },
     "slug": {
@@ -68,7 +68,8 @@
         "immagine.singola-immagine",
         "immagine.galleria-immagini",
         "immagine.galleria-immagini-testo",
-        "widget.articolo"
+        "widget.articolo",
+        "mappa.mappa"
       ]
     },
     "spalla_destra": {

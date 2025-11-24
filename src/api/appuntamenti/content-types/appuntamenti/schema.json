@@ -21,9 +21,6 @@
     "dataInizio": {
       "type": "datetime"
     },
-    "contenuto_da_verificare": {
-      "type": "richtext"
-    },
     "fotoGallery": {
       "type": "component",
       "component": "immagine.galleria-immagini",
@@ -33,9 +30,11 @@
       "type": "string"
     },
     "listaLink": {
-      "type": "component",
-      "component": "shared.link",
-      "repeatable": true
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "inEvidenza": {
       "type": "boolean",
@@ -48,6 +47,13 @@
       "type": "uid",
       "targetField": "title",
       "required": false
+    },
+    "contenuto": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     }
   }
 }

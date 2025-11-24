@@ -104,6 +104,14 @@ export interface ImmagineSingolaImmagine extends Struct.ComponentSchema {
   };
 }
 
+export interface MappaMappa extends Struct.ComponentSchema {
+  collectionName: 'components_mappa_mappas';
+  info: {
+    displayName: 'mappa';
+  };
+  attributes: {};
+}
+
 export interface SharedBottone extends Struct.ComponentSchema {
   collectionName: 'components_shared_bottones';
   info: {
@@ -130,11 +138,20 @@ export interface SharedColonna extends Struct.ComponentSchema {
           'data',
           'datainizio',
           'datafine',
+          'publicationDate',
+          'dateCreated',
+          'expirationDate',
           'title',
           'fonte',
+          'fontePrefisso',
+          'sourceName',
           'autore',
+          'author',
           'comune',
           'descrizione',
+          'description',
+          'content',
+          'contenuto',
           'download',
         ]
       > &
@@ -334,13 +351,13 @@ export interface WidgetAppuntamenti extends Struct.ComponentSchema {
             etichetta: 'data';
             isCliccabile: false;
             nomeColonna: 'data';
-            tipo: 'text';
+            tipo: 'date';
           },
           {
             composizioneColonna: '["title"]';
             etichetta: 'title';
             isCliccabile: true;
-            nomeColonna: 'title';
+            nomeColonna: 'titolo';
             tipo: 'text';
           },
           {
@@ -408,7 +425,7 @@ export interface WidgetComunicati extends Struct.ComponentSchema {
             composizioneColonna: '["comune","title"]';
             etichetta: 'title';
             isCliccabile: true;
-            nomeColonna: 'title';
+            nomeColonna: 'titolo';
             tipo: 'text';
           },
           {
@@ -419,8 +436,8 @@ export interface WidgetComunicati extends Struct.ComponentSchema {
             tipo: 'text';
           },
           {
-            composizioneColonna: '["descrizione"]';
-            etichetta: 'descrizione';
+            composizioneColonna: '["contenuto"]';
+            etichetta: 'contenuto';
             isCliccabile: false;
             nomeColonna: 'descrizione';
             tipo: 'text';
@@ -521,7 +538,7 @@ export interface WidgetEventi extends Struct.ComponentSchema {
             composizioneColonna: '["title"]';
             etichetta: 'title';
             isCliccabile: true;
-            nomeColonna: 'title';
+            nomeColonna: 'titolo';
             tipo: 'text';
           },
           {
@@ -532,8 +549,8 @@ export interface WidgetEventi extends Struct.ComponentSchema {
             tipo: 'text';
           },
           {
-            composizioneColonna: '["descrizione"]';
-            etichetta: 'descrizione';
+            composizioneColonna: '["contenuto"]';
+            etichetta: 'contenuto';
             isCliccabile: false;
             nomeColonna: 'descrizione';
             tipo: 'text';
@@ -613,12 +630,12 @@ export interface WidgetNew extends Struct.ComponentSchema {
             composizioneColonna: '["title"]';
             etichetta: 'title';
             isCliccabile: true;
-            nomeColonna: 'title';
+            nomeColonna: 'titolo';
             tipo: 'text';
           },
           {
-            composizioneColonna: '["content"]';
-            etichetta: 'content';
+            composizioneColonna: '["description"]';
+            etichetta: 'description';
             isCliccabile: false;
             nomeColonna: 'descrizione';
             tipo: 'text';
@@ -706,6 +723,7 @@ declare module '@strapi/strapi' {
       'immagine.galleria-immagini': ImmagineGalleriaImmagini;
       'immagine.galleria-immagini-testo': ImmagineGalleriaImmaginiTesto;
       'immagine.singola-immagine': ImmagineSingolaImmagine;
+      'mappa.mappa': MappaMappa;
       'shared.bottone': SharedBottone;
       'shared.colonna': SharedColonna;
       'shared.image': SharedImage;

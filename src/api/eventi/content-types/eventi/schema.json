@@ -46,16 +46,24 @@
         "images"
       ]
     },
-    "sommario_da_verificare": {
-      "type": "richtext"
+    "sommario": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "fotoGallery": {
       "type": "component",
       "component": "immagine.galleria-immagini",
       "repeatable": false
     },
-    "allegati_da_widget": {
-      "type": "string"
+    "allegati": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "eventi_da_verificare": {
       "type": "relation",

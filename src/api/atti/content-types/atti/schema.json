@@ -30,13 +30,20 @@
       "target": "api::categoria-atti.categoria-atti",
       "inversedBy": "attis"
     },
-    "curriculum_da_verificare": {
-      "type": "string"
+    "curriculum": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
-    "documento_da_verificare": {
-      "type": "string"
+    "documento": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
-
     "slug": {
       "type": "uid",
       "targetField": "title",

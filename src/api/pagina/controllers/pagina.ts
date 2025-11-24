@@ -88,6 +88,10 @@ async function findDescendants(parentId: number, maxDepth: number = Infinity, cu
       id: { $in: publishedIds }
     },
     populate: { url_addizionali: true }, // Popola gli URL addizionali per ogni figlio
+    orderBy: [
+      { ordineVisualizzazioneMenu: 'asc' },
+      { title: 'asc' }
+    ]
   });
 
   // Per ogni figlio, trova ricorsivamente i suoi discendenti

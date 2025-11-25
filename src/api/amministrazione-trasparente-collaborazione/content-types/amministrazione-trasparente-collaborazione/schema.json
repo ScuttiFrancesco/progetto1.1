@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "amministrazione_trasparente_collaboraziones",
+  "info": {
+    "singularName": "amministrazione-trasparente-collaborazione",
+    "pluralName": "amministrazione-trasparente-collaboraziones",
+    "displayName": "Amministrazione Trasparente Collaborazione"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "datiFiscali": {
+      "type": "string"
+    },
+    "unitaAmministrativa": {
+      "type": "text"
+    },
+    "denominazione": {
+      "type": "text"
+    },
+    "oggettoIncarico": {
+      "type": "text"
+    },
+    "estremiAttoConferimentoIncarico": {
+      "type": "text"
+    },
+    "importoCompenso": {
+      "type": "text"
+    },
+    "incarichiAltrePA": {
+      "type": "text"
+    },
+    "retribuzioneDiRisultato": {
+      "type": "text"
+    },
+    "task": {
+      "type": "string"
+    },
+    "annoRiferimento": {
+      "type": "text"
+    },
+    "dataInizio": {
+      "type": "datetime"
+    },
+    "dataFine": {
+      "type": "datetime"
+    }
+  }
+}

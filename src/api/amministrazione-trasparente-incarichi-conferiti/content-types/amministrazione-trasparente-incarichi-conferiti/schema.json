@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "amministrazione_trasparente_incarichi_conferitis",
+  "info": {
+    "singularName": "amministrazione-trasparente-incarichi-conferiti",
+    "pluralName": "amministrazione-trasparente-incarichi-conferitis",
+    "displayName": "Amministrazione Trasparente Incarichi Conferiti"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "annoRiferimento": {
+      "type": "string"
+    },
+    "cognome": {
+      "type": "text"
+    },
+    "nome": {
+      "type": "text"
+    },
+    "qualifica": {
+      "type": "string"
+    },
+    "denominazioneSoggettoConferente": {
+      "type": "text"
+    },
+    "unitaAmministrativa": {
+      "type": "text"
+    },
+    "oggettoIncarico": {
+      "type": "text"
+    },
+    "tipologiaIncarico": {
+      "type": "string"
+    },
+    "compenso": {
+      "type": "text"
+    },
+    "task": {
+      "type": "text"
+    },
+    "dataInizio": {
+      "type": "datetime"
+    },
+    "dataFine": {
+      "type": "datetime"
+    }
+  }
+}

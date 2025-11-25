@@ -430,6 +430,136 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAmministrazioneTrasparenteCollaborazioneAmministrazioneTrasparenteCollaborazione
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'amministrazione_trasparente_collaboraziones';
+  info: {
+    displayName: 'Amministrazione Trasparente Collaborazione';
+    pluralName: 'amministrazione-trasparente-collaboraziones';
+    singularName: 'amministrazione-trasparente-collaborazione';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    annoRiferimento: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dataFine: Schema.Attribute.DateTime;
+    dataInizio: Schema.Attribute.DateTime;
+    datiFiscali: Schema.Attribute.String;
+    denominazione: Schema.Attribute.Text;
+    estremiAttoConferimentoIncarico: Schema.Attribute.Text;
+    importoCompenso: Schema.Attribute.Text;
+    incarichiAltrePA: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::amministrazione-trasparente-collaborazione.amministrazione-trasparente-collaborazione'
+    > &
+      Schema.Attribute.Private;
+    oggettoIncarico: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    retribuzioneDiRisultato: Schema.Attribute.Text;
+    task: Schema.Attribute.String;
+    unitaAmministrativa: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiAmministrazioneTrasparenteIncarichiConferitiAmministrazioneTrasparenteIncarichiConferiti
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'amministrazione_trasparente_incarichi_conferitis';
+  info: {
+    displayName: 'Amministrazione Trasparente Incarichi Conferiti';
+    pluralName: 'amministrazione-trasparente-incarichi-conferitis';
+    singularName: 'amministrazione-trasparente-incarichi-conferiti';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    annoRiferimento: Schema.Attribute.String;
+    cognome: Schema.Attribute.Text;
+    compenso: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dataFine: Schema.Attribute.DateTime;
+    dataInizio: Schema.Attribute.DateTime;
+    denominazioneSoggettoConferente: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::amministrazione-trasparente-incarichi-conferiti.amministrazione-trasparente-incarichi-conferiti'
+    > &
+      Schema.Attribute.Private;
+    nome: Schema.Attribute.Text;
+    oggettoIncarico: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    qualifica: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'title'>;
+    task: Schema.Attribute.Text;
+    tipologiaIncarico: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    unitaAmministrativa: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiAmministrazioneTrasparenteIncarichiDirigenzialiAmministrazioneTrasparenteIncarichiDirigenziali
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'amministrazione_trasparente_incarichi_dirigenzialis';
+  info: {
+    displayName: 'Amministrazione Trasparente Incarichi Dirigenziali';
+    pluralName: 'amministrazione-trasparente-incarichi-dirigenzialis';
+    singularName: 'amministrazione-trasparente-incarichi-dirigenziali';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cognome: Schema.Attribute.String;
+    compensiIncarico: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    emolumenti: Schema.Attribute.Text;
+    grado: Schema.Attribute.String;
+    incarico: Schema.Attribute.String;
+    indennita: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::amministrazione-trasparente-incarichi-dirigenziali.amministrazione-trasparente-incarichi-dirigenziali'
+    > &
+      Schema.Attribute.Private;
+    nome: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    rimborsi: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiAppuntamentiStoriaAppuntamentiStoria
   extends Struct.CollectionTypeSchema {
   collectionName: 'appuntamenti_storias';
@@ -2470,6 +2600,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::amministrazione-trasparente-collaborazione.amministrazione-trasparente-collaborazione': ApiAmministrazioneTrasparenteCollaborazioneAmministrazioneTrasparenteCollaborazione;
+      'api::amministrazione-trasparente-incarichi-conferiti.amministrazione-trasparente-incarichi-conferiti': ApiAmministrazioneTrasparenteIncarichiConferitiAmministrazioneTrasparenteIncarichiConferiti;
+      'api::amministrazione-trasparente-incarichi-dirigenziali.amministrazione-trasparente-incarichi-dirigenziali': ApiAmministrazioneTrasparenteIncarichiDirigenzialiAmministrazioneTrasparenteIncarichiDirigenziali;
       'api::appuntamenti-storia.appuntamenti-storia': ApiAppuntamentiStoriaAppuntamentiStoria;
       'api::appuntamenti.appuntamenti': ApiAppuntamentiAppuntamenti;
       'api::articoli.articoli': ApiArticoliArticoli;
